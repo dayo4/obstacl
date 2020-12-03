@@ -1,0 +1,36 @@
+.isDisabled {
+	position: relative;
+    overflow: hidden;
+    box-shadow: none;
+}
+    
+.isDisabled .Overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	background-color: rgba(72, 72, 72, 0.80);
+	letter-spacing: 1px;
+	font-weight: bold;
+	transition: 0.5s
+}
+
+.isDisabled .Overlay .animate-spin {
+  animation: spin 2s infinite linear;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
