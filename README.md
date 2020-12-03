@@ -48,8 +48,13 @@ MainOptions {
 
 ```javascript
 import { Obstacl } from 'obstacl'
-import '/node_modules/obstacl/dist/obstacl.min.css' /* Or use it from cdn link 
- unpkg.com/obstacl/dist/obstacl.min.css */
+import '/node_modules/obstacl/dist/obstacl.min.css'
+ /* Or use it from cdn link */
+// https://unpkg.com/obstacl/dist/obstacl.min.css 
+// https://unpkg.com/obstacl/dist/obstacl.min.js 
+
+
+/* Little Examples */
 
 // block login button until api response
 const sendBtn = document.querySelector('#sendBtn')
@@ -68,19 +73,19 @@ const sendBtn = document.querySelector('#sendBtn')
 		})
 				
 // disable element and re-enable after a countdown timer
-            Obstacl.create('#button', {
-				action: function () { 
-					// some default actions to perform
-				},
-				onClick: function () { 
-					// what happens if user click element while obstacl is active
-					// some actions to perform 
-				},
-				text: 'Please wait',
-				timer: 10000,
-				showCountdown: true,
-				font: 30
-			})
+        Obstacl.create('#button', {
+			action: function () { 
+				// some default actions to perform
+			},
+			onClick: function () { 
+				// what happens if user click element while obstacl is active
+				// some actions to perform 
+			},
+			text: 'Please wait',
+			timer: 10000,
+			showCountdown: true,
+			font: 30
+		})
 
 
 // inject a prefered custom element instead of default options
@@ -89,19 +94,19 @@ const customHtml = `
 		// some more innerHtml
 	</div>
 `
-			window.onload = function {
-				Obstacl.create('#main-page .wholePageLoading', {
-					injectHTML: customHtml,
-					useOverlay: false,
-					action: function () { 
-						// some default actions to perform
-						fetch('api-stuffs-link').then(()=>{
-							//
-							Obstacl.destroy(...)
-						})
-					},
-				})
-			}
+		window.onload = function {
+			Obstacl.create('#main-page .wholePageLoading', {
+				injectHTML: customHtml,
+				useOverlay: false,
+				action: function () { 
+					// some default actions to perform
+					fetch('api-stuffs-link').then(()=>{
+						//
+						Obstacl.destroy(...)
+					})
+				},
+			})
+		}
 
 // more diverse use cases ...
 ```
